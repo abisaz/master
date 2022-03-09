@@ -1,0 +1,7 @@
+Aloha Head of Sports
+
+Es hat sich gerade ein Pro Surfer im ${Lokalgruppe} angemeldet!
+Sein Name ist: ${Vorname} ${Nachname}.
+
+Liebe Grüsse,
+Andri Bisaz

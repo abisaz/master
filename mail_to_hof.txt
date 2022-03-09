@@ -1,0 +1,11 @@
+Lieber Head of Finance ${Lokalgruppenkuerzel}
+Jemand will sich beim ASC ${Lokalgruppenkuerzel} anmelden.
+
+Bitte gehe zu 
+Clubdesk -> Dokumente -> Vorstand -> A_IT_Donotchange -> Neue Mitglieder Schweizweit
+und kontrolliere, ob die betreffende Person schon bezahlt hat. Wenn die Person den Beitrag bezahlt hat, bitte «Bezahlt» ankreuzen. Falls dies nicht der Fall ist, sollte die Person später noch einmal kontrolliert werden. Die Willkommensmail wird danach automatisch gesendet. 
+
+
+Liebe Grüsse,
+Andri Bisaz
+Head of IT

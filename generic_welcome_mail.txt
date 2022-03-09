@@ -1,0 +1,20 @@
+Aloha ${PERSON_NAME}
+
+We welcome you to the ${Lokalgruppe}, which is affiliated to the Academic Surfclub Switzerland!
+
+From now on you are part of the biggest Swiss network for surfing students and alumni. Surely you are wondering what to do next. To get access to our communication channels and to register for all sessions and events, you need a member login. To do this, simply go to the "Login Button" on the website. There you will find instructions that will help you to create a new account. If something does not work, you can easily contact the IT support.
+
+Once you have your login, you can access the intranet of the website. Please go to the intranet on our site to find the access links for our WhatsApp groups, the online membercard and more. After logging in to your local group's chat, you are welcome to log in to the other chats if you are interested in events in other locations in Switzerland.
+
+We look forward to meeting you at the next session or event!
+
+Some informations for you:
+Languages: The local groups are in the local language. This means for example that the ASC Zürich will be speaking swiss german, the ASC Genève french. However, all of us speak english! If this is the only common language that you speak, just ask the others to switch :) they will do that happily!
+Membercard: In the Intranet you have a section with "Membercard". It is to show that you are a acitve member of the Academic Surfclub. Please show it whenever it is asked from you, for example to get discount in our partnerstores and so on.
+
+Now we wish you all the best, and that we meet soon :D
+
+Hang loose!!
+Your ${Lokalgruppe} Board
+
+PS: This email was sent by the Head of IT. If you have any questions about the registration process, please ask them directly to the ${Lokalgruppe}. You can find the contact information on the website.

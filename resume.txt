@@ -1,0 +1,8 @@
+Aloha Membermaster
+
+Das Programm hat ${n_new_members} neue Mitglieder dem Register hinzugefügt.
+Das Programm hat ${n_wellcommed} neue Mitglieder persönlich willkommen geheissen.
+
+
+Best,
+Programm

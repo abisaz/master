@@ -1,0 +1,16 @@
+Aloha ${PERSON_NAME}
+
+You want to join the ${Lokalgruppe}.
+
+PLEASE NOTE THE FOLLOWING: We do not issue invoices, you have to pay them directly on your own initiative. You can find the links to the payment portals at the local groups on our website or in the closing window of the registration form. (Student 29.- / Alummni 49.-)
+
+As soon as we have received your payment and your data is verified, you will become an official member of the Academic Surfclub. More information will follow.
+
+We are a volunteer club, so it may take a few days for your registration to be processed. If there are important events coming up, we will do our best to process your registration faster. However, we cannot guarantee anything.
+
+Hope to see you soon :)
+Your ${Lokalgruppe} board
+
+PS: This email was sent by the Head of IT. If you have any questions about the registration process, please ask them directly to the ${Lokalgruppe}. You can find the contact details on the website.
+
+Translated with www.DeepL.com/Translator (free version)
