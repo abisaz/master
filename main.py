@@ -383,6 +383,7 @@ if True:
     prof['browser.helperApps.showAlertonComplete'] = 'false'
     prof['browser.download.manager.focusWhenStarting'] = 'false'
     browser = Browser('firefox',profile_preferences=prof)
+    #set window position
     browser.driver.set_window_size(1280,940)
     browser.visit('https://app.clubdesk.com/clubdesk/start')
 
