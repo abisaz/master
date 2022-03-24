@@ -53,7 +53,7 @@ def send_mail_to_user(email, name, lokalgruppe):
     # set up the SMTP server  ######################
     s = smtplib.SMTP(host='securemail-academicsurfclub-ch.prossl.de', port=587)
     s.starttls()
-    s.login('acdonotreply', 'DSu@bC7xwG&rX5nb4yzf')
+    s.login('acdonotreply', 'kaimakkk1')
 
     #send message to new user
     msg = MIMEMultipart()  # create a message
@@ -87,7 +87,7 @@ def send_mail_to_hof(lokalgruppenkuerzel):
     # set up the SMTP server  ######################
     s = smtplib.SMTP(host='securemail-academicsurfclub-ch.prossl.de', port=587)
     s.starttls()
-    s.login('acdonotreply', 'DSu@bC7xwG&rX5nb4yzf')
+    s.login('acdonotreply', 'kaimakkk1')
 
     ##for test
     #lokalgruppenkuerzel = 'ZH'
@@ -128,7 +128,7 @@ def send_mail_to_wannabeuser(email, name, lokalgruppe):
     # set up the SMTP server  ######################
     s = smtplib.SMTP(host='securemail-academicsurfclub-ch.prossl.de', port=587)
     s.starttls()
-    s.login('acdonotreply', 'DSu@bC7xwG&rX5nb4yzf')
+    s.login('acdonotreply', 'kaimakkk1')
 
     #send message to new user
     msg = MIMEMultipart()  # create a message
@@ -159,7 +159,7 @@ def send_resume_mail(n_new_members, n_wellcommed):
     # set up the SMTP server  ######################
     s = smtplib.SMTP(host='securemail-academicsurfclub-ch.prossl.de', port=587)
     s.starttls()
-    s.login('acdonotreply', 'DSu@bC7xwG&rX5nb4yzf')
+    s.login('acdonotreply', 'kaimakkk1')
 
 
     #send message to the involved HOF

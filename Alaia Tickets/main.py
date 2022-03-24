@@ -21,6 +21,7 @@ imap_server.select('INBOX')  # Default is `INBOX`
 # Then you can fetch specific messages with the IDs.
 # Search filters are explained in the RFC at:
 # https://tools.ietf.org/html/rfc3501#section-6.4.4
+
 search_criteria = 'ALL'
 charset = None  # All
 respose_code, message_numbers_raw = imap_server.search(charset, search_criteria)
@@ -35,10 +36,8 @@ for message_number in message_numbers_raw[0].split():
 
     # Parse the raw email message in to a convenient object
     message = email.message_from_bytes(msg[0][1])
-    messagerw = message_message_raw()
     if message["from"] == '"SumUp.com" <no-reply@sumupstore.com>':
         print("New Mail from SumUp found!")
-        print(f'From: {message["from"]}')
         if message.is_multipart():
 
 
