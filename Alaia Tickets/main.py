@@ -1,6 +1,9 @@
 import imaplib
 import email
-from bs4 import BeautifulSoup
+import codecs
+
+
+
 # Connect and login to IMAP mail server
 username = 'acdonotreply'
 password = 'kaimakkk1'
@@ -21,7 +24,6 @@ imap_server.select('INBOX')  # Default is `INBOX`
 search_criteria = 'ALL'
 charset = None  # All
 respose_code, message_numbers_raw = imap_server.search(charset, search_criteria)
-print(f'Search response: {respose_code}')  # e.g. OK
 print(f'Message numbers: {message_numbers_raw}')  # e.g. ['1 2'] A list, with string of message IDs
 message_numbers = message_numbers_raw[0].split()
 
@@ -32,34 +34,33 @@ for message_number in message_numbers_raw[0].split():
     _, msg = imap_server.fetch(message_number, '(RFC822)')
 
     # Parse the raw email message in to a convenient object
-    try:
-        message = email.message_from_bytes(msg[0][1])
-    except:
-        print("fail")
-
+    message = email.message_from_bytes(msg[0][1])
     if message["from"] == '"SumUp.com" <no-reply@sumupstore.com>':
         print("New Mail from SumUp found!")
-        print('== Email details =====')
         print(f'From: {message["from"]}')
-        print(f'Content type: {message.get_content_type()}')
         if message.is_multipart():
-            print('Multipart types:')
 
 
             multipart_payload = message.get_payload()
+
             for sub_message in multipart_payload:
-                my_string = sub_message.get_payload()
-                kundendaten = my_string[sub_message.get_payload().find('Kundendaten') + 261:(sub_message.get_payload().find('Kundendaten') + 700)]
+
+                my_string = sub_message.as_string()
+                index = my_string.find('Kundendaten')
+
+                kundendaten = my_string[index + 259:(index + 700)]
                 kundendaten = kundendaten.replace("  ", "")
                 kundendaten = kundendaten.replace("=20", "")
-                undendaten = kundendaten.replace(' \r', "")
+                undendaten = kundendaten.replace('\r', "")
                 kundendaten = kundendaten.split('\n')
+
                 name = kundendaten[0]
                 email = kundendaten[1]
                 tnr = kundendaten[2]
                 print(name)
                 print(email)
                 print(tnr)
+
                 break
 
     else:
