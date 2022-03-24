@@ -35,6 +35,7 @@ for message_number in message_numbers_raw[0].split():
 
     # Parse the raw email message in to a convenient object
     message = email.message_from_bytes(msg[0][1])
+    messagerw = message_message_raw()
     if message["from"] == '"SumUp.com" <no-reply@sumupstore.com>':
         print("New Mail from SumUp found!")
         print(f'From: {message["from"]}')
@@ -47,7 +48,6 @@ for message_number in message_numbers_raw[0].split():
 
                 my_string = sub_message.as_string()
                 index = my_string.find('Kundendaten')
-
                 kundendaten = my_string[index + 259:(index + 700)]
                 kundendaten = kundendaten.replace("  ", "")
                 kundendaten = kundendaten.replace("=20", "")
