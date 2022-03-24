@@ -66,21 +66,25 @@ def read_mails():
                             body = body.replace("\n\n", "\n")
                             body = body.replace("\n\n", "\n")
                             userlist = body.splitlines()
-                            #print (userlist)
+                            print (userlist)
 
                             #get user name and phone number
                             index = userlist.index('Kundendaten')
                             name = userlist[index +1]
                             tnr = userlist[index + 3]
+                            mail = "to be done"
 
                             #get item number
                             index = userlist.index(Artikel)
                             anzahl_items = userlist[index+1]
                             anzahl_items = anzahl_items[:1]
 
-                            print("User:", name, ", T-nummer: ", tnr, "will", anzahl_items, "Ticket(s)")
+                            # get order number
+                            ordernr = userlist[2]
 
-                            checksheet(name, tnr, anzahl_items)
+                            print("Ordernr:", ordernr, "User:", name, ", T-nummer: ", tnr, "will", anzahl_items, "Ticket(s)")
+
+                            getvoucher(ordernr, name, tnr, mail, anzahl_items)
 
 
 
@@ -97,8 +101,27 @@ def read_mails():
     imap_server.close()
     imap_server.logout()
 
-def checksheet(name, tnr, anzahl_items):
-    
+def getvoucher(ordernr, name, tnr, email, anzahl_items):
+    data= pd.read_csv("Alaiavouchers.csv")
+    #print(data)
+    vouchers = 0
+
+    for i in range(len(data)):
+        value = data.at[i, 'Email Sent']
+        if value != None:
+            ticket = data.at[i, "Voucher"]
+            sendmail(ticket, name)
+            crossticket(i, ordernr, name, tnr, email)
+            vouchers = vouchers +1
+
+        if vouchers >= int(anzahl_items):
+            break
+
+def sendmail(ticket, name):
+    print("Sending mail ticket", ticket, "to", name)
+
+def crossticket(i, name, tnr, email):
+    print("corssing ticket at pos", i)
 
 
 read_mails()
