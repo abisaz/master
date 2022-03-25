@@ -25,13 +25,15 @@ def read_mails():
     mail_server = 'securemail-academicsurfclub-ch.prossl.de'
     imap_server = imaplib.IMAP4_SSL(host=mail_server)
     imap_server.login(username, password)
-
-    status, messages = imap_server.select("INBOX")
-    respose_code, message_numbers_raw = imap_server.search(None, 'ALL')
-    message_numbers = len(message_numbers_raw[0].split())
+    imap_server.select("INBOX")
     imap_server.create("Processed")
 
+
+    respose_code, message_numbers_raw = imap_server.search(None, 'ALL')
+    message_numbers = len(message_numbers_raw[0].split())
+
     for i in range(message_numbers, 0, -1):
+
         # fetch the email message by ID
         res, msg = imap_server.fetch(str(i), "(RFC822)")
 
@@ -39,18 +41,12 @@ def read_mails():
             if isinstance(response, tuple):
                 # parse a bytes email into a message object
                 msg = email.message_from_bytes(response[1])
-                # decode the email subject
-                subject, encoding = decode_header(msg["Subject"])[0]
-                if isinstance(subject, bytes):
-                    # if it's a bytes, decode to str
-                    subject = subject.decode(encoding)
                 # decode email sender
                 From, encoding = decode_header(msg.get("From"))[0]
                 if isinstance(From, bytes):
                     From = From.decode(encoding)
                 # if the email message is multipart
                 if msg.is_multipart() and From == '"SumUp.com" <no-reply@sumupstore.com>':
-                    #print("Subject:", subject)
                     print("From:", From)
                     # iterate over email parts
                     for part in msg.walk():
@@ -81,9 +77,10 @@ def read_mails():
 
                             #get user name and phone number
                             index = userlist.index('Kundendaten')
-                            name = userlist[index +1]
+                            name = userlist[index + 1]
                             tnr = userlist[index + 3]
                             mail = userlist[index +2]
+                            mail = mail.replace("at", "@")
 
                             #get item number
                             index = userlist.index(Artikel)
@@ -101,15 +98,12 @@ def read_mails():
                             print()
                             print()
                             print()
+
                     tomove = str(i)
                     imap_server.copy(tomove, "Processed")
                     imap_server.store(tomove, "+FLAGS", "\\Deleted")
                 else:
                     print("No Mails found from SumUp")
-                    # extract content type of email
-                    content_type = msg.get_content_type()
-                    # get the email body
-                    body = msg.get_payload(decode=True).decode()
 
 
 
