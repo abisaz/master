@@ -27,13 +27,14 @@ def read_mails():
     imap_server.login(username, password)
 
     status, messages = imap_server.select("INBOX")
-    # number of top emails to fetch
     respose_code, message_numbers_raw = imap_server.search(None, 'ALL')
-    message_numbers = len(message_numbers_raw[0].split()       )
+    message_numbers = len(message_numbers_raw[0].split())
+    imap_server.create("Processed")
 
     for i in range(message_numbers, 0, -1):
         # fetch the email message by ID
         res, msg = imap_server.fetch(str(i), "(RFC822)")
+
         for response in msg:
             if isinstance(response, tuple):
                 # parse a bytes email into a message object
@@ -100,11 +101,16 @@ def read_mails():
                             print()
                             print()
                             print()
+                    tomove = str(i)
+                    imap_server.copy(tomove, "Processed")
+                    imap_server.store(tomove, "+FLAGS", "\\Deleted")
                 else:
+                    print("No Mails found from SumUp")
                     # extract content type of email
                     content_type = msg.get_content_type()
                     # get the email body
                     body = msg.get_payload(decode=True).decode()
+
 
 
     # close the connection and logout
@@ -148,7 +154,7 @@ def sendmail(ticket, name, email):
     message = message_template.substitute(PERSON_NAME=name, ticket=ticket)
 
     # add in the message body
-    msg.attach(MIMEText(message, 'plain'))
+    msg.attach(MIMEText(message, 'html'))
 
     # send the message via the server set up earlier.
     if sendmails:
