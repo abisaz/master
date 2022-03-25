@@ -1,0 +1,16 @@
+Aloha ${PERSON_NAME}
+
+Thank you for purchasing the Alaïa subsidized tickets. 
+Please keep this email carefully to not loose your voucher. If you do anyway you can contact us for a small fee of 5.-. We will tell you your voucher codes again.
+
+Your Alaïa Bay voucher is:
+
+
+
+${ticket}
+
+
+Have fun surfing and hang loose!!
+Your Academic Surfclub Switzerland Board
+
+PS: This email was sent by an automated process. If you feel that something went wrong please do not hesitate to contact it@academicsurfclub.ch
