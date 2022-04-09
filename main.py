@@ -20,7 +20,7 @@ sendmails = True
 mitglieder_speichern = True
 
 
-dir_name = 'C:\mitg\export.csv'
+dir_name = 'D:\OneDrive\Vereine\ASC CH\Mitgliederverwaltung Programm\export.csv'
 n_new_added = 0
 n_formconfirmation = 0
 itemnumber = 0
@@ -373,7 +373,7 @@ if True:
     prof = {}
     prof['browser.download.manager.showWhenStarting'] = 'false'
     prof['browser.helperApps.alwaysAsk.force'] = 'false'
-    prof['browser.download.dir'] = 'C:\mitg'
+    prof['browser.download.dir'] = 'D:\OneDrive\Vereine\ASC CH\Mitgliederverwaltung Programm'
     prof['browser.download.folderList'] = 2
 
 
@@ -396,7 +396,7 @@ if True:
 if download:
     #delete old document
     try:
-        os.remove("C:\mitg\export.csv")
+        os.remove(dir_name)
     except:
         None
 

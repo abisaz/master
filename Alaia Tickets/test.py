@@ -147,6 +147,7 @@ def sendmail(ticket, name, email):
     message_template = read_template('ticketmsg.txt')
     message = message_template.substitute(PERSON_NAME=name, ticket=ticket)
 
+
     # add in the message body
     msg.attach(MIMEText(message, 'html'))
 

@@ -13,4 +13,5 @@
 <li>etc etc etc</li>
 </ul>
 <p><br />Have fun surfing and hang loose!!<br />Your Academic Surfclub Switzerland</p>
+<p><img src="https://academicsurfclub.ch/clubdesk/fileservlet?type=image&amp;inline=true&amp;id=1000212&amp;imageFormat=_512x512" alt="Logo" width="144" height="144" /></p>
 <p><em>PS: This email was sent by an automated process. If you feel that something went wrong please do not hesitate to contact <a href="mailto:it@academicsurfclub.ch">IT</a></em></p>
