@@ -20,7 +20,7 @@ sendmails = True
 mitglieder_speichern = True
 
 
-dir_name = 'D:\OneDrive\Vereine\ASC CH\Mitgliederverwaltung Programm\export.csv'
+dir_name = 'export.csv'
 n_new_added = 0
 n_formconfirmation = 0
 itemnumber = 0
